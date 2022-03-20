@@ -85,12 +85,12 @@
       <h1 class="title">Todo List</h1>
             <div class="todo">
               @if ($errors->has('name'))
-                  <tr>
-  　                <th>ERROR</th>
-                　<td>
-                  {{$errors->first('name')}} 
-                 </td>
-            </tr>
+<tr>
+  　<th>ERROR</th>
+  　<td>
+     {{$errors->first('name')}}
+   </td>
+</tr>
           @endif
         <form action="/todo/create" method="post">
             @csrf

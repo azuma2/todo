@@ -12,14 +12,6 @@ class TodoController extends Controller
         $items = DB::select('select * from todo');
         return view('index', ['items' => $items]);
     }
-     public function post(Request $request)
-    {
-        $validate_rule = [
-            'name' => 'content',
-        ];
-        $this->validate($request, $validate_rule);
-        return view('index', ['txt' => '正しい入力です']);
-    }
         public function add()
     {
         return view('add');

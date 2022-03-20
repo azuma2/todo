@@ -12,14 +12,6 @@ class TodoController extends Controller
         $items = DB::select('select * from todo');
         return view('index', ['items' => $items]);
     }
-     public function post(Request $request)
-    {
-        $validate_rule = [
-            'name' => 'content',
-        ];
-        $this->validate($request, $validate_rule);
-        return view('index', ['txt' => '正しい入力です']);
-    }
         public function add()
     {
         return view('add');
@@ -45,7 +37,7 @@ class TodoController extends Controller
             'id' => $request->id,
             'content' => $request->content,
         ];
-        DB::update('update todo set content =:content  where id =:id', $param);
+        DB::update('update todo set content =:content,  where id =:id', $param);
         return redirect('/');
     }
     public function delete(Request $request)

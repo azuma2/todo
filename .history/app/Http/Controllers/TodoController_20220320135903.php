@@ -19,7 +19,7 @@ class TodoController extends Controller
         ];
         $this->validate($request, $validate_rule);
         return view('index', ['txt' => '正しい入力です']);
-    }
+    
         public function add()
     {
         return view('add');

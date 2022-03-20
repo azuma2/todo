@@ -16,10 +16,13 @@ class TodoController extends Controller
     {
         $validate_rule = [
             'name' => 'content',
+            'role' => 'required',
+            'email' => 'required|email',
+            'age' => 'numeric',
+            'registered_at' => 'date|nullable',
         ];
         $this->validate($request, $validate_rule);
         return view('index', ['txt' => '正しい入力です']);
-    }
         public function add()
     {
         return view('add');
