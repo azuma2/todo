@@ -47,14 +47,15 @@ class TodoController extends Controller
      public function edit(Request $request)
     {
         $todo = Todo::find($request->id);
-        return view('edit', ['form' => $todo]);
+        return view('edit', ['form' => $author]);
     }
     public function update(Request $request)
     {
-        $this->validate($request, Todo::$rules);
+        $this->validate($request, Author::$rules);
         $form = $request->all();
         unset($form['_token']);
-        Todo::where('id', $request->id)->update($form);
+        Author::where('id', $request->id)->update($form);
         return redirect('/');
     }
+}
 }

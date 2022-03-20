@@ -58,3 +58,4 @@ class TodoController extends Controller
         return redirect('/');
     }
 }
+}

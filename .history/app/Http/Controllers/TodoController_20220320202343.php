@@ -44,17 +44,5 @@ class TodoController extends Controller
         return redirect('/');
     }
 
-     public function edit(Request $request)
-    {
-        $todo = Todo::find($request->id);
-        return view('edit', ['form' => $todo]);
-    }
-    public function update(Request $request)
-    {
-        $this->validate($request, Todo::$rules);
-        $form = $request->all();
-        unset($form['_token']);
-        Todo::where('id', $request->id)->update($form);
-        return redirect('/');
-    }
+    
 }
