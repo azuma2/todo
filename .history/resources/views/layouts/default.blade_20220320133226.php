@@ -103,12 +103,14 @@
             <td>
               2022-03-19 07:32:46
             </td>
+            @csrf
             <form action="/todo/update?id=1" method="post">
               @csrf
               <td>
 
                 <input type="text" class="input-update" value="aaa1" name="content" />
               </td>
+              @csrf
               <td>
                 
                 <button class="button">更新</button>
