@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\todo;
 
 class TodoController extends Controller
 {
     public function index(Request $request)
     {
         $items = DB::select('select * from todo');
-        return view('index', ['items' => $items]);
-        $items = todo::all();
         return view('index', ['items' => $items]);
     }
      public function post(Request $request)
@@ -64,5 +61,12 @@ class TodoController extends Controller
         return redirect('/');
     }
 
-
+    class AuthorController extends Controller
+{
+    public function index()
+    {
+        $items = Author::all();
+        return view('index', ['items' => $items]);
+    }
+}
 }

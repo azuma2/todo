@@ -8,7 +8,7 @@ use App\Models\todo;
 
 class TodoController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $items = DB::select('select * from todo');
         return view('index', ['items' => $items]);

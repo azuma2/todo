@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\todo;
 
 class TodoController extends Controller
 {
@@ -12,7 +11,7 @@ class TodoController extends Controller
     {
         $items = DB::select('select * from todo');
         return view('index', ['items' => $items]);
-        $items = todo::all();
+        $items = Author::all();
         return view('index', ['items' => $items]);
     }
      public function post(Request $request)

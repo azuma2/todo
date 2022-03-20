@@ -15,7 +15,7 @@
       {{$item->getDetail()}}
     </td>
   </tr>
-  @endforeach
+  
 </table>
 
 @csrf
