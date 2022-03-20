@@ -8,5 +8,5 @@ Route::get('/todo/create', [TodoController::class, 'add']);
 Route::post('/todo/create', [TodoController::class, 'create']);
 Route::get('/todo/update', [TodoController::class, 'edit']);
 Route::post('/todo/update', [TodoController::class, 'update']);
-Route::get('/todo/delete', [TodoController::class, 'delete']);
-Route::post('/todo/delete', [TodoController::class, 'remove']);
+Route::get('/delete', [TodoController::class, 'delete']);
+Route::post('/delete', [TodoController::class, 'remove']);
