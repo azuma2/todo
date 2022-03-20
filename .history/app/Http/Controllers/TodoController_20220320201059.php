@@ -40,7 +40,7 @@ class TodoController extends Controller
     {
         $this->validate($request, Todo::$rules);
         $form = $request->all();
-        Todo::create($form);
+        Author::create($form);
         return redirect('/');
     }
 }

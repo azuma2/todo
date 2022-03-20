@@ -38,9 +38,9 @@ class TodoController extends Controller
     }
     public function create(Request $request)
     {
-        $this->validate($request, Todo::$rules);
+        $this->validate($request, Author::$rules);
         $form = $request->all();
-        Todo::create($form);
+        Author::create($form);
         return redirect('/');
     }
 }

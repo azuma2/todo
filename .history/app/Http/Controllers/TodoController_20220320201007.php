@@ -9,7 +9,7 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $items = Todo::all();
+        $items = Author::all();
         return view('index', ['items' => $items]);
     }
     public function find()
@@ -18,19 +18,19 @@ class TodoController extends Controller
     }
     public function search(Request $request)
     {
-        $item = Todo::where('name', 'LIKE',"%{$request->input}%")->first();
+        $item = Author::where('name', 'LIKE',"%{$request->input}%")->first();
         $param = [
             'input' => $request->input,
             'item' => $item
         ];
         return view('find', $param);
     }
-    public function bind(Todo $todo)
+    public function bind(Author $author)
     {
         $data = [
-            'item'=>$todo,
+            'item'=>$author,
         ];
-        return view('todo.binds', $data);
+        return view('author.binds', $data);
     }
     public function add()
     {
@@ -38,9 +38,9 @@ class TodoController extends Controller
     }
     public function create(Request $request)
     {
-        $this->validate($request, Todo::$rules);
+        $this->validate($request, Author::$rules);
         $form = $request->all();
-        Todo::create($form);
+        Author::create($form);
         return redirect('/');
     }
 }
