@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TodoTableSeeder extends Seeder
+class TodosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +15,12 @@ class TodoTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'content' => 'tony',
+            'name' => 'tony',
         ];
-        DB::table('todo')->insert($param);
+        DB::table('todos')->insert($param);
         $param = [
-            'content' => 'jack',
+            'cons' => 'jack',
         ];
-        DB::table('todo')->insert($param);
+        DB::table('todos')->insert($param);
     }
 }
