@@ -81,7 +81,14 @@
     </style>
   </head>
   
-        @section('title', 'index.blade.php')
+  
+
+
+
+  <body>
+  <div class="container">
+    <div class="card">
+      @section('title', '.blade.php')
 @section('content')
 <table>
   <tr>
@@ -96,13 +103,6 @@
   @endforeach
 </table>
 @endsection
-
-
-
-  <body>
-  <div class="container">
-    <div class="card">
-
       <h1 class="title">Todo List</h1>
             <div class="todo">
               @if ($errors->has('content'))

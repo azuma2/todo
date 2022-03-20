@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\todo;
+use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

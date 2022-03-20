@@ -2,15 +2,21 @@
 
 namespace App\Models;
 
-use App\Models\todo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class todo extends Model
 {
+    use HasFactory;
+
+    protected $fillable = ['name', 'age', 'nationality'];
+
+    public static $rules = array(
+        'content' => 'required',
+    );
     public function getDetail()
     {
-         $txt = 'ID:'.$this->id . ' ' . $this->content;
+        $txt = 'ID:'.$this->id . ' ' . $this->content;
         return $txt;
     }
 }

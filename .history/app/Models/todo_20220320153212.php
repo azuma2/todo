@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\todo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class todo extends Model
+class Author extends Model
 {
     public function getDetail()
     {
-         $txt = 'ID:'.$this->id . ' ' . $this->content;
+        $txt = 'ID:'.$this->id . ' ' . $this->name . '(' . $this->age .  '才'.') '.$this->nationality;
         return $txt;
     }
 }

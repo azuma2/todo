@@ -81,7 +81,7 @@
     </style>
   </head>
   
-        @section('title', 'index.blade.php')
+        @section('title', 'default.blade.php')
 @section('content')
 <table>
   <tr>
@@ -156,5 +156,5 @@
   </div>
   </div>
 </body>
-
+@endsection
 </html>
