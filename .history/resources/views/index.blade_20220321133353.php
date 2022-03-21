@@ -20,14 +20,14 @@
         td {
       padding: 5px 10px;
       text-align: center;
+        display:flex;
+  flex-flow: column;
         }
     
 
     .narabe{
-      display:flex;
-        flex-flow: column;
+      display
     }
-
     .button {
     text-align: left;
     border: 2px solid #dc70fa;
@@ -103,7 +103,6 @@
           <input class="button" type="submit" value="追加" />
         </form>
           @csrf
-          <div class="narabe">
         <table>
             @csrf
           <tr>
@@ -112,10 +111,9 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
-          
                     <tr>
             @foreach ($items as $item)
-            
+            <div class="narabe">
             <td>
               {{$item->created_at}}
             </td>

@@ -19,6 +19,14 @@ class Todo extends Model
     
 
 
+    public function post(Request $request)
+    {
+        $content = $request->content;
+        $item = [
+            'cont' => $content . 'と入力しましたね'
+        ];
+        return view('index', $item);
+    }
 
 
 

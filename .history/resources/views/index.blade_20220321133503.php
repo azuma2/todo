@@ -20,12 +20,13 @@
         td {
       padding: 5px 10px;
       text-align: center;
+        display:flex;
+  flex-flow: column;
         }
     
 
     .narabe{
       display:flex;
-        flex-flow: column;
     }
 
     .button {
@@ -103,7 +104,6 @@
           <input class="button" type="submit" value="追加" />
         </form>
           @csrf
-          <div class="narabe">
         <table>
             @csrf
           <tr>

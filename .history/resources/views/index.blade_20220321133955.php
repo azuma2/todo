@@ -20,12 +20,13 @@
         td {
       padding: 5px 10px;
       text-align: center;
+        display:flex;
+
         }
     
 
     .narabe{
       display:flex;
-        flex-flow: column;
     }
 
     .button {

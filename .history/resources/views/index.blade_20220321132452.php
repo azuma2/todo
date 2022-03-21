@@ -20,14 +20,9 @@
         td {
       padding: 5px 10px;
       text-align: center;
+        display:flex;
+  flex-flow: column;
         }
-    
-
-    .narabe{
-      display:flex;
-        flex-flow: column;
-    }
-
     .button {
     text-align: left;
     border: 2px solid #dc70fa;
@@ -103,7 +98,6 @@
           <input class="button" type="submit" value="追加" />
         </form>
           @csrf
-          <div class="narabe">
         <table>
             @csrf
           <tr>
@@ -112,12 +106,9 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
-          
-                    <tr>
-            @foreach ($items as $item)
-            
+                    <tr>]
             <td>
-              {{$item->created_at}}
+              2022-03-19 07:32:46
             </td>
             <form action="/todo/update?id=1" method="post">
               @csrf
@@ -132,15 +123,18 @@
             </form>
             <td>
 
+ @endforeach
+
+
+
+
               <form action="/todo/delete?id=1" method="post">
                 
                               @csrf
                 <button class="button">削除</button>
               </form>
             </td>
-            </div>
           </tr>
-           @endforeach
                   </table>
       </div>
     </div>

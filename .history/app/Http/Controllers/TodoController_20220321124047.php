@@ -74,7 +74,7 @@ $param =
     public function remove(Request $request)
     {
         $param = ['id' => $request->id];
-        DB::delete('delete from todos where id =:id', $param);
+        DB::delete('delete from authors where id =:id', $param);
         return redirect('/');
     }
 
