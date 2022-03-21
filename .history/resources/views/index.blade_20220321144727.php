@@ -126,8 +126,8 @@
                 <input type="text" class="input-update" value="{{$item->content}}" name="content" />
               </td>
               <td>
-                <input type="hidden"  name="content" value="{{$item->content}}" />
-                <input class="button" type="submit" value="更新" >
+                
+                <input class="button" type="submit" value="削除" >
               </td>
             </form>
             <td>

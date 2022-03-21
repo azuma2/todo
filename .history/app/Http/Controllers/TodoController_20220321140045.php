@@ -56,11 +56,10 @@ $param =
     }
     public function update(Request $request)
     {
-         $param = [
-            'id' => $request->id,
-            'content' => $request->content,
-        ];
-        DB::update('update todos set content =:content where id =:id', $param);
+        $this->validate($request, Todo::$rules);
+        $form = $request->all();
+        unset($form['_token']);
+        Todo::where('id', $request->id)->update($form);
         return redirect('/');
     }
 

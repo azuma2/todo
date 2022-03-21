@@ -71,7 +71,7 @@ $param =
     {
         $param = ['id' => $request->id];
         $item = DB::select('select * from todos where id = :id', $param);
-        return view('delete', ['form' => $item[0]]);
+        return view('delete', ['form' => $item[id]]);
     }
     public function remove(Request $request)
     {

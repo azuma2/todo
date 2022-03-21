@@ -58,9 +58,11 @@ $param =
     {
          $param = [
             'id' => $request->id,
-            'content' => $request->content,
+            'name' => $request->name,
+            'age' => $request->age,
+            'nationality' => $request->nationality,
         ];
-        DB::update('update todos set content =:content where id =:id', $param);
+        DB::update('update authors set name =:name, age =:age, nationality =:nationality where id =:id', $param);
         return redirect('/');
     }
 

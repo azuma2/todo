@@ -60,7 +60,7 @@ $param =
             'id' => $request->id,
             'content' => $request->content,
         ];
-        DB::update('update todos set content =:content where id =:id', $param);
+        DB::update('update todos set content =:content, age =:age, nationality =:nationality where id =:id', $param);
         return redirect('/');
     }
 
