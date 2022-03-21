@@ -76,9 +76,13 @@
     }
     </style>
   </head>
+  
   <body>
+
+
   <div class="container">
     <div class="card">
+
       <h1 class="title">Todo List</h1>
             <div class="todo">
               @if ($errors->has('content'))
@@ -138,4 +142,5 @@
   </div>
 
 </body>
+
 </html>

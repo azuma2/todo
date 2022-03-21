@@ -76,9 +76,13 @@
     }
     </style>
   </head>
+  
   <body>
+
+
   <div class="container">
     <div class="card">
+
       <h1 class="title">Todo List</h1>
             <div class="todo">
               @if ($errors->has('content'))
@@ -114,16 +118,19 @@
             <form action="/todo/update" method="post">
               @csrf
               <td>
+
                 <input type="text" class="input-update" value="{{$item->content}}" name="content" />
               </td>
               <td>
+                
                 <input type="hidden"  name="id" value="{{$item->id}}">
                 <input class="button" type="submit" value="更新" >
               </td>
             </form>
             <td>
               <form action="/todo/delete" method="post" >
-                    @csrf
+                
+                              @csrf
                 <input  type="hidden" name="id" value="{{$item->id}}" >
                 <input class="button" type="submit" value="削除" >
               </form>
@@ -137,5 +144,10 @@
   </div>
   </div>
 
+  
+
+
+
 </body>
+
 </html>

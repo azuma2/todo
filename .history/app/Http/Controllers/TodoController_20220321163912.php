@@ -25,6 +25,7 @@ class TodoController extends Controller
         return redirect('/');
     }
 
+
     public function update(Request $request)
     {
          $param = [
@@ -37,11 +38,18 @@ class TodoController extends Controller
         return redirect('/');
     }
 
+
+
+
     public function remove(Request $request)
     {
         $param = ['id' => $request->id];
         DB::delete('delete from todos where id =:id', $param);
         return redirect('/');
     }
+
+
+
+
 
 }
