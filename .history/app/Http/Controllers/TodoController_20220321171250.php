@@ -32,7 +32,7 @@ class TodoController extends Controller
             'content' => $request->content,
             
         ];
-        $this->validate($request, Todo::$rules);
+        
         DB::update('update todos set content =:content where id =:id', $param);
         return redirect('/');
     }
