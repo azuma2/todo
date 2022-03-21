@@ -24,7 +24,8 @@ class TodoController extends Controller
     {
         $param = ['content' => $request->content,];
         $this->validate($request, Todo::$rules);
-
+        $form = $request->all();
+        Todo::create($form);
         DB::insert('insert into todos (content) values (:content)', $param);
         return redirect('/');
     }
@@ -40,11 +41,11 @@ class TodoController extends Controller
     {
          $param = [
             'id' => $request->id,
-            'content2' => $request->content,
+            'content' => $request->content,
             
         ];
-
-        DB::update('update todos set content =:content2 where id =:id', $param);
+        dd($request->all());
+        DB::update('update todos set content =:content where id =:id', $param);
         return redirect('/');
     }
 

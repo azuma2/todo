@@ -15,6 +15,7 @@ class TodoController extends Controller
         
         return view('index', ['items' => $items]);
     }
+ 
 
     public function add()
     {
@@ -22,10 +23,19 @@ class TodoController extends Controller
     }
     public function create(Request $request)
     {
-        $param = ['content' => $request->content,];
-        $this->validate($request, Todo::$rules);
 
+m$para = 
+
+        $this->validate($request, Todo::$rules);
+        $form = $request->all();
+        Todo::create($form);
+
+[
+                'content' => $request->name,
+        ];
         DB::insert('insert into todos (content) values (:content)', $param);
+
+
         return redirect('/');
     }
 
@@ -40,11 +50,9 @@ class TodoController extends Controller
     {
          $param = [
             'id' => $request->id,
-            'content2' => $request->content,
-            
+            'content' => $request->content,
         ];
-
-        DB::update('update todos set content =:content2 where id =:id', $param);
+        DB::update('update todos set content =:content where id =:id', $param);
         return redirect('/');
     }
 

@@ -123,7 +123,7 @@
               @csrf
               <td>
  
-                <input type="text" class="input-update" value="{{$item->content}}" name="content2" />
+                <input type="text" class="input-update" value="{{$item->content}}" name="content" />
               </td>
               <td>
                 <input type="txt"  name="update" value="{{$item->content}}">

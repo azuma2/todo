@@ -44,7 +44,7 @@ class TodoController extends Controller
             
         ];
 
-        DB::update('update todos set content =:content2 where id =:id', $param);
+        DB::update('update todos set contents =:content where id =:id', $param);
         return redirect('/');
     }
 

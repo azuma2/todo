@@ -20,17 +20,17 @@ class TodoController extends Controller
     {
         return view('add');
     }
+
     public function create(Request $request)
     {
         $param = ['content' => $request->content,];
-        $this->validate($request, Todo::$rules);
-
+        $form = $request->all();
         DB::insert('insert into todos (content) values (:content)', $param);
         return redirect('/');
     }
 
 
-     public function edit(Request $request)
+    public function edit(Request $request)
     {
                 $param = ['id' => $request->id];
         $item = DB::select('select * from todos where id = :id', $param);
@@ -39,17 +39,11 @@ class TodoController extends Controller
     public function update(Request $request)
     {
          $param = [
-            'id' => $request->id,
-            'content2' => $request->content,
-            
+            'content' => $request->content,
         ];
-
-        DB::update('update todos set content =:content2 where id =:id', $param);
+        DB::update('update todos set content =:content ', $param);
         return redirect('/');
     }
-
-
-
 
     public function delete(Request $request)
     {
@@ -63,9 +57,5 @@ class TodoController extends Controller
         DB::delete('delete from todos where id =:id', $param);
         return redirect('/');
     }
-
-
-
-
 
 }

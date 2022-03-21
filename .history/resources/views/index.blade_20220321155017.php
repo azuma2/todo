@@ -123,11 +123,11 @@
               @csrf
               <td>
  
-                <input type="text" class="input-update" value="{{$item->content}}" name="content2" />
+                <input type="text" class="input-update" value="{{$item->content}}" name="content" />
               </td>
               <td>
-                <input type="txt"  name="update" value="{{$item->content}}">
-                <input type="hidden"  name="id" value="">
+                <input type="hidden"  name="update" value="{{$item->content}}">
+                <input type="txt"  name="id" value="{{$item->id}}">
                 <input class="button" type="submit" value="更新" >
               </td>
             </form>
